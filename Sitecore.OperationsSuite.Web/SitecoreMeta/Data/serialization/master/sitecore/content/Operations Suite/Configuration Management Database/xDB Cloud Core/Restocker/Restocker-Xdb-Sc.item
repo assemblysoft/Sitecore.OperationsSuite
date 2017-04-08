@@ -1,0 +1,73 @@
+----item----
+version: 1
+id: {AEB856E4-4B53-4D6E-AD2B-029428E54F3E}
+database: master
+path: /sitecore/content/Operations Suite/Configuration Management Database/xDB Cloud Core/Restocker/Restocker-Xdb-Sc
+parent: {8276A65E-F374-416C-8DBC-46D0AC7D92C4}
+name: Restocker-Xdb-Sc
+master: {00000000-0000-0000-0000-000000000000}
+template: {21A59B50-6589-4800-90A6-5D2E90528031}
+templatekey: Azure Cloud Service
+created: 20170401T115503Z
+
+----field----
+field: {38F0C08B-3FE9-43BA-8151-68577F0DAF65}
+name: Endpoint
+key: endpoint
+content-length: 37
+
+http://restocker-xdb-sc.cloudapp.net/
+----field----
+field: {CA995708-3A04-4F36-AA9A-B2CEA00C3B93}
+name: SubscriptionId
+key: subscriptionid
+content-length: 36
+
+c5deeb27-dfd3-4603-b6be-add5db5da1a8
+----version----
+language: en
+version: 1
+revision: 65e49a34-abce-48d1-b61f-3314282cf12f
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20170401T115503Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+65e49a34-abce-48d1-b61f-3314282cf12f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20170401T120211Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin

@@ -1,0 +1,53 @@
+﻿@using System.Web.Optimization
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/css/Styles")
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    @Scripts.Render("~/Js/Script")
+</head>
+
+<body class="grey">
+    <div class="nowrap darkGrey">
+        <div class="maincontentinner center span10">
+            <div>
+                <a href="http://sitecore.net" target="_blank">
+                    <img id="Logo" src="~/Images/TopLogo.png" width="242px" height="69px">
+                </a>
+            </div>
+        </div>
+        <div class="nowrap darkGrey">
+            <div class="maincontentinner  span10 center">
+                <div class="appTitle">
+                    <img src="~/Images/home.png" alt="Sitecore Message Home">
+                    <span>SITECORE CLOUD SERVICES</span>
+                    <h3>Services Health Dashboard</h3>
+                </div>
+            </div>
+        </div>
+        <div class="nowrap body">
+            <div class="maincontentinner span6 center">
+                @RenderBody()
+            </div>
+        </div>
+
+        <div class="nowrap darkGrey">
+            <div class="maincontentinner span10 center">
+                <a href="http://sitecore.net" target="_blank">
+                    <img src="~/Images/sitecorelogo.png" width="110px" height="33px">
+                </a>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Sitecore.OperationsSuite.Web.Models.ServiceStatus.ServiceStatusModel>
+@{
+  Layout = null;
+}
+@if (Model.Any())
+{
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="greyCell">Status</th>
+        <th class="greyCell">Service Name</th>
+        <th class="greyCell">Comments</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      @foreach (var service in Model)
+      {
+        <tr>
+          <td>
+            <div class="status" style="background: @service.Color"></div> &nbsp; @service.Status
+          </td>
+          <td>@service.Name</td>
+          <td>@service.Message</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}

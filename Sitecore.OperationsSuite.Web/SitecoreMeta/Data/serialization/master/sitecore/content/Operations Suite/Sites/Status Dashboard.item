@@ -1,0 +1,45 @@
+----item----
+version: 1
+id: {81865401-FA7F-4E8C-A640-A637D0E3DB11}
+database: master
+path: /sitecore/content/Operations Suite/Sites/Status Dashboard
+parent: {C5614A79-649A-421B-A78F-7F29FEAC33AF}
+name: Status Dashboard
+master: {00000000-0000-0000-0000-000000000000}
+template: {5070A96E-B302-4327-AB6F-3E0D34DF74FD}
+templatekey: Status Dashboard
+created: 20170401T192302Z
+
+----version----
+language: en
+version: 1
+revision: 3690c9a8-1e19-4a44-84cf-74321dd79384
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20170401T192303Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3690c9a8-1e19-4a44-84cf-74321dd79384
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20170407T220317Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin

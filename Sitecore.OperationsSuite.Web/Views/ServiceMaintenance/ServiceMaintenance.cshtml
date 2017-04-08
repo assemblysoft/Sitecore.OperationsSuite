@@ -1,0 +1,27 @@
+﻿@model Sitecore.OperationsSuite.Web.Models.ServiceStatus.ServiceMaintenanceModel
+
+@{
+    Layout = null;
+}
+
+@if (Model.Entries.Any())
+{
+  <div class="SectionHeading">
+    <h2 class="pull-left">@Model.Title</h2>
+  </div>
+
+  foreach (var maintenance in Model.Entries)
+  {
+    <div class="Maintenance">
+      <h4>@maintenance.Name</h4>
+      <span><i class="fa fa-calendar">&nbsp</i>@Html.ScheduledForUtc(maintenance.StartDate, maintenance.EndDate)</span>
+      <p>
+        @Html.Raw(maintenance.Description)
+        <small>- @Html.PrintDateUtc(maintenance.StartDate, "Posted on")</small>
+        <br/>
+        In Progress: @Html.Raw(maintenance.InProgress)
+      </p>
+    </div>
+  }
+}
+

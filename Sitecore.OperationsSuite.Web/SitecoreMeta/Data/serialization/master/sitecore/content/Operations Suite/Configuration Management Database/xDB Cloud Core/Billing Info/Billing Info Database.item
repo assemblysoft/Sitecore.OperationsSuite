@@ -1,0 +1,73 @@
+----item----
+version: 1
+id: {DCBA4280-B3CA-46F4-B614-9E2A75DF3D85}
+database: master
+path: /sitecore/content/Operations Suite/Configuration Management Database/xDB Cloud Core/Billing Info/Billing Info Database
+parent: {CBB9FC3E-2CAE-46C6-8FE4-129DB81F032F}
+name: Billing Info Database
+master: {00000000-0000-0000-0000-000000000000}
+template: {CB06E42E-2A91-4CF2-A319-9D237CE7C015}
+templatekey: Azure Storage
+created: 20170401T120502Z
+
+----field----
+field: {5F9A97D2-0E84-4D6B-AB6D-01EE2B557982}
+name: Storage Name
+key: storage name
+content-length: 19
+
+billinginfoxdbscstr
+----field----
+field: {CA995708-3A04-4F36-AA9A-B2CEA00C3B93}
+name: SubscriptionId
+key: subscriptionid
+content-length: 36
+
+c5deeb27-dfd3-4603-b6be-add5db5da1a8
+----version----
+language: en
+version: 1
+revision: 12166fd9-196a-4f49-acee-4136e53fb645
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20170401T120502Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+12166fd9-196a-4f49-acee-4136e53fb645
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20170401T120517Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin

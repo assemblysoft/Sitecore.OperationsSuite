@@ -1,0 +1,22 @@
+﻿@using Sitecore.Mvc
+
+@{
+  Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<span>Last updated at: @DateTime.Now.ToLocalTime()</span>
+<br /><br />
+
+@*{ Html.RenderAction("Legend", "Priority"); } *@
+
+@Html.Sitecore().Placeholder("scmmain")
+
+@*{ Html.RenderAction("ScheduledMaintenance", "MaintenanceStatus", new { itemsToRetrieve = 5 });}
+
+  @{ Html.RenderAction("OnGoingMaintenance", "MaintenanceStatus", new { itemsToRetrieve = 5 });}
+
+  @{ Html.RenderAction("PastIncidents", "MaintenanceStatus", new { itemsToRetrieve = 5 });}
+  
+*@
+
+

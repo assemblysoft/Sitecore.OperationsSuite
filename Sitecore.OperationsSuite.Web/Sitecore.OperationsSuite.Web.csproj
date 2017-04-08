@@ -1,0 +1,618 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0E576181-3EA6-47E5-8E7C-5368B2B0F02A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sitecore.OperationsSuite</RootNamespace>
+    <AssemblyName>Sitecore.OperationsSuite.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Lucene.Net, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.1.0.0\lib\netstandard1.1\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.1.0.0\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RazorGenerator.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorGenerator.Mvc.2.4.2\lib\net40\RazorGenerator.Mvc.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.Abstractions, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Abstractions.8.2.161221\lib\NET452\Sitecore.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Analytics, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Analytics.8.2.161221\lib\NET452\Sitecore.Analytics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Analytics.Core, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Analytics.Core.8.2.161221\lib\NET452\Sitecore.Analytics.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Analytics.DataAccess, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Analytics.DataAccess.8.2.161221\lib\NET452\Sitecore.Analytics.DataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Analytics.Model, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Analytics.Model.8.2.161221\lib\NET452\Sitecore.Analytics.Model.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Analytics.Processing, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Analytics.Processing.8.2.161221\lib\NET452\Sitecore.Analytics.Processing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Buckets, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Buckets.8.2.161221\lib\NET452\Sitecore.Buckets.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Client, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Client.8.2.161221\lib\NET452\Sitecore.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.ContentSearch.8.2.161221\lib\NET452\Sitecore.ContentSearch.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.ContentSearch.Linq.8.2.161221\lib\NET452\Sitecore.ContentSearch.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Kernel, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Kernel.8.2.161221\lib\NET452\Sitecore.Kernel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.Logging, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Logging.8.2.161221\lib\NET452\Sitecore.Logging.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.Logging.Client, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Logging.Client.8.2.161221\lib\NET452\Sitecore.Logging.Client.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.Marketing, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Marketing.8.2.161221\lib\NET452\Sitecore.Marketing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Marketing.Core, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Marketing.Core.8.2.161221\lib\NET452\Sitecore.Marketing.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Marketing.Taxonomy, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Marketing.Taxonomy.8.2.161221\lib\NET452\Sitecore.Marketing.Taxonomy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Mvc, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Mvc.8.2.161221\lib\NET452\Sitecore.Mvc.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.NVelocity, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.NVelocity.8.2.161221\lib\NET452\Sitecore.NVelocity.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.Xdb.Configuration, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Xdb.Configuration.8.2.161221\lib\NET452\Sitecore.Xdb.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Zip, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Zip.8.2.161221\lib\NET452\Sitecore.Zip.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0.3\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\app.css" />
+    <Content Include="Css\bootstrap-fileupload.min.css" />
+    <Content Include="Css\bootstrap-responsive.min.css" />
+    <Content Include="Css\bootstrap-timepicker.min.css" />
+    <Content Include="Css\bootstrap.min.css" />
+    <Content Include="Css\font-awesome.css" />
+    <Content Include="Css\jquery-ui-timepicker-addon.css" />
+    <Content Include="Css\jquery.alerts.css" />
+    <Content Include="Css\jquery.chosen.css" />
+    <Content Include="Css\jquery.datetimepicker.min.css" />
+    <Content Include="Css\jquery.jgrowl.css" />
+    <Content Include="Css\jquery.tagsinput.css" />
+    <Content Include="Css\jquery.ui.css" />
+    <Content Include="Css\responsive-tables.css" />
+    <Content Include="Css\standard_theme.css" />
+    <Content Include="Css\style.default.css" />
+    <Content Include="Css\ui.spinner.css" />
+    <Content Include="Fonts\fontawesome\fontawesome-webfont.svg" />
+    <Content Include="Fonts\fontello\fontello.svg" />
+    <Content Include="Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Fonts\lato\Lato-Bla-webfont.svg" />
+    <Content Include="Fonts\lato\Lato-BlaIta-webfont.svg" />
+    <Content Include="Fonts\lato\Lato-Bol-webfont.svg" />
+    <Content Include="Fonts\lato\Lato-BolIta-webfont.svg" />
+    <Content Include="Fonts\lato\Lato-Hai-webfont.svg" />
+    <Content Include="Fonts\lato\Lato-HaiIta-webfont.svg" />
+    <Content Include="Fonts\lato\Lato-Lig-webfont.svg" />
+    <Content Include="Fonts\lato\Lato-LigIta-webfont.svg" />
+    <Content Include="Fonts\lato\Lato-Reg-webfont.svg" />
+    <Content Include="Fonts\lato\Lato-RegIta-webfont.svg" />
+    <Content Include="Fonts\lato\SIL Open Font License 1.1.txt" />
+    <Content Include="Fonts\roboto\Google Android License.txt" />
+    <Content Include="Fonts\roboto\Roboto-Black-webfont.svg" />
+    <Content Include="Fonts\roboto\Roboto-BlackItalic-webfont.svg" />
+    <Content Include="Fonts\roboto\Roboto-Bold-webfont.svg" />
+    <Content Include="Fonts\roboto\Roboto-BoldCondensed-webfont.svg" />
+    <Content Include="Fonts\roboto\Roboto-BoldCondensedItalic-webfont.svg" />
+    <Content Include="Fonts\roboto\Roboto-BoldItalic-webfont.svg" />
+    <Content Include="Fonts\roboto\Roboto-Condensed-webfont.svg" />
+    <Content Include="Fonts\roboto\Roboto-CondensedItalic-webfont.svg" />
+    <Content Include="Fonts\roboto\Roboto-Italic-webfont.svg" />
+    <Content Include="Fonts\roboto\Roboto-Light-webfont.svg" />
+    <Content Include="Fonts\roboto\Roboto-LightItalic-webfont.svg" />
+    <Content Include="Fonts\roboto\Roboto-Medium-webfont.svg" />
+    <Content Include="Fonts\roboto\Roboto-MediumItalic-webfont.svg" />
+    <Content Include="Fonts\roboto\Roboto-Regular-webfont.svg" />
+    <Content Include="Fonts\roboto\Roboto-Thin-webfont.svg" />
+    <Content Include="Fonts\roboto\Roboto-ThinItalic-webfont.svg" />
+    <Content Include="Fonts\fontawesome\fontawesome-webfont.eot" />
+    <Content Include="Fonts\fontawesome\fontawesome-webfont.ttf" />
+    <Content Include="Fonts\fontawesome\fontawesome-webfont.woff" />
+    <Content Include="Fonts\fontawesome\FontAwesome.otf" />
+    <Content Include="Fonts\fontello\fontello.eot" />
+    <Content Include="Fonts\fontello\fontello.ttf" />
+    <Content Include="Fonts\fontello\fontello.woff" />
+    <Content Include="Fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Fonts\lato\Lato-Bla-webfont.eot" />
+    <Content Include="Fonts\lato\Lato-Bla-webfont.ttf" />
+    <Content Include="Fonts\lato\Lato-Bla-webfont.woff" />
+    <Content Include="Fonts\lato\Lato-BlaIta-webfont.eot" />
+    <Content Include="Fonts\lato\Lato-BlaIta-webfont.ttf" />
+    <Content Include="Fonts\lato\Lato-BlaIta-webfont.woff" />
+    <Content Include="Fonts\lato\Lato-Bol-webfont.eot" />
+    <Content Include="Fonts\lato\Lato-Bol-webfont.ttf" />
+    <Content Include="Fonts\lato\Lato-Bol-webfont.woff" />
+    <Content Include="Fonts\lato\Lato-BolIta-webfont.eot" />
+    <Content Include="Fonts\lato\Lato-BolIta-webfont.ttf" />
+    <Content Include="Fonts\lato\Lato-BolIta-webfont.woff" />
+    <Content Include="Fonts\lato\Lato-Hai-webfont.eot" />
+    <Content Include="Fonts\lato\Lato-Hai-webfont.ttf" />
+    <Content Include="Fonts\lato\Lato-Hai-webfont.woff" />
+    <Content Include="Fonts\lato\Lato-HaiIta-webfont.eot" />
+    <Content Include="Fonts\lato\Lato-HaiIta-webfont.ttf" />
+    <Content Include="Fonts\lato\Lato-HaiIta-webfont.woff" />
+    <Content Include="Fonts\lato\Lato-Lig-webfont.eot" />
+    <Content Include="Fonts\lato\Lato-Lig-webfont.ttf" />
+    <Content Include="Fonts\lato\Lato-Lig-webfont.woff" />
+    <Content Include="Fonts\lato\Lato-LigIta-webfont.eot" />
+    <Content Include="Fonts\lato\Lato-LigIta-webfont.ttf" />
+    <Content Include="Fonts\lato\Lato-LigIta-webfont.woff" />
+    <Content Include="Fonts\lato\Lato-Reg-webfont.eot" />
+    <Content Include="Fonts\lato\Lato-Reg-webfont.ttf" />
+    <Content Include="Fonts\lato\Lato-Reg-webfont.woff" />
+    <Content Include="Fonts\lato\Lato-RegIta-webfont.eot" />
+    <Content Include="Fonts\lato\Lato-RegIta-webfont.ttf" />
+    <Content Include="Fonts\lato\Lato-RegIta-webfont.woff" />
+    <Content Include="Fonts\roboto\.DS_Store" />
+    <Content Include="Fonts\roboto\Roboto-Black-webfont.eot" />
+    <Content Include="Fonts\roboto\Roboto-Black-webfont.ttf" />
+    <Content Include="Fonts\roboto\Roboto-Black-webfont.woff" />
+    <Content Include="Fonts\roboto\Roboto-BlackItalic-webfont.eot" />
+    <Content Include="Fonts\roboto\Roboto-BlackItalic-webfont.ttf" />
+    <Content Include="Fonts\roboto\Roboto-BlackItalic-webfont.woff" />
+    <Content Include="Fonts\roboto\Roboto-Bold-webfont.eot" />
+    <Content Include="Fonts\roboto\Roboto-Bold-webfont.ttf" />
+    <Content Include="Fonts\roboto\Roboto-Bold-webfont.woff" />
+    <Content Include="Fonts\roboto\Roboto-BoldCondensed-webfont.eot" />
+    <Content Include="Fonts\roboto\Roboto-BoldCondensed-webfont.ttf" />
+    <Content Include="Fonts\roboto\Roboto-BoldCondensed-webfont.woff" />
+    <Content Include="Fonts\roboto\Roboto-BoldCondensedItalic-webfont.eot" />
+    <Content Include="Fonts\roboto\Roboto-BoldCondensedItalic-webfont.ttf" />
+    <Content Include="Fonts\roboto\Roboto-BoldCondensedItalic-webfont.woff" />
+    <Content Include="Fonts\roboto\Roboto-BoldItalic-webfont.eot" />
+    <Content Include="Fonts\roboto\Roboto-BoldItalic-webfont.ttf" />
+    <Content Include="Fonts\roboto\Roboto-BoldItalic-webfont.woff" />
+    <Content Include="Fonts\roboto\Roboto-Condensed-webfont.eot" />
+    <Content Include="Fonts\roboto\Roboto-Condensed-webfont.ttf" />
+    <Content Include="Fonts\roboto\Roboto-Condensed-webfont.woff" />
+    <Content Include="Fonts\roboto\Roboto-CondensedItalic-webfont.eot" />
+    <Content Include="Fonts\roboto\Roboto-CondensedItalic-webfont.ttf" />
+    <Content Include="Fonts\roboto\Roboto-CondensedItalic-webfont.woff" />
+    <Content Include="Fonts\roboto\Roboto-Italic-webfont.eot" />
+    <Content Include="Fonts\roboto\Roboto-Italic-webfont.ttf" />
+    <Content Include="Fonts\roboto\Roboto-Italic-webfont.woff" />
+    <Content Include="Fonts\roboto\Roboto-Light-webfont.eot" />
+    <Content Include="Fonts\roboto\Roboto-Light-webfont.ttf" />
+    <Content Include="Fonts\roboto\Roboto-Light-webfont.woff" />
+    <Content Include="Fonts\roboto\Roboto-LightItalic-webfont.eot" />
+    <Content Include="Fonts\roboto\Roboto-LightItalic-webfont.ttf" />
+    <Content Include="Fonts\roboto\Roboto-LightItalic-webfont.woff" />
+    <Content Include="Fonts\roboto\Roboto-Medium-webfont.eot" />
+    <Content Include="Fonts\roboto\Roboto-Medium-webfont.ttf" />
+    <Content Include="Fonts\roboto\Roboto-Medium-webfont.woff" />
+    <Content Include="Fonts\roboto\Roboto-MediumItalic-webfont.eot" />
+    <Content Include="Fonts\roboto\Roboto-MediumItalic-webfont.ttf" />
+    <Content Include="Fonts\roboto\Roboto-MediumItalic-webfont.woff" />
+    <Content Include="Fonts\roboto\Roboto-Regular-webfont.eot" />
+    <Content Include="Fonts\roboto\Roboto-Regular-webfont.ttf" />
+    <Content Include="Fonts\roboto\Roboto-Regular-webfont.woff" />
+    <Content Include="Fonts\roboto\Roboto-Thin-webfont.eot" />
+    <Content Include="Fonts\roboto\Roboto-Thin-webfont.ttf" />
+    <Content Include="Fonts\roboto\Roboto-Thin-webfont.woff" />
+    <Content Include="Fonts\roboto\Roboto-ThinItalic-webfont.eot" />
+    <Content Include="Fonts\roboto\Roboto-ThinItalic-webfont.ttf" />
+    <Content Include="Fonts\roboto\Roboto-ThinItalic-webfont.woff" />
+    <Content Include="Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\icons\.DS_Store" />
+    <Content Include="Js\.DS_Store" />
+    <Content Include="App_Config\Include\OperationsSuite\Sitecore.OpsSuite.ContentSearch.Lucene.config" />
+    <Content Include="App_Config\Include\OperationsSuite\Sitecore.OpsSuite.Sites.StatusPage.config" />
+    <None Include="Properties\PublishProfiles\Localhost.pubxml" />
+    <Content Include="Images\barmenu.png" />
+    <Content Include="Images\bcarrow.png" />
+    <Content Include="Images\bg1.png" />
+    <Content Include="Images\blockquote.png" />
+    <Content Include="Images\blog.png" />
+    <Content Include="Images\border.png" />
+    <Content Include="Images\calarrow.png" />
+    <Content Include="Images\check.png" />
+    <Content Include="Images\check2.png" />
+    <Content Include="Images\chosen-sprite.png" />
+    <Content Include="Images\colorpicker\blank.gif" />
+    <Content Include="Images\colorpicker\colorpicker_background.png" />
+    <Content Include="Images\colorpicker\colorpicker_hex.png" />
+    <Content Include="Images\colorpicker\colorpicker_hsb_b.png" />
+    <Content Include="Images\colorpicker\colorpicker_hsb_h.png" />
+    <Content Include="Images\colorpicker\colorpicker_hsb_s.png" />
+    <Content Include="Images\colorpicker\colorpicker_indic.gif" />
+    <Content Include="Images\colorpicker\colorpicker_overlay.png" />
+    <Content Include="Images\colorpicker\colorpicker_rgb_b.png" />
+    <Content Include="Images\colorpicker\colorpicker_rgb_g.png" />
+    <Content Include="Images\colorpicker\colorpicker_rgb_r.png" />
+    <Content Include="Images\colorpicker\colorpicker_select.gif" />
+    <Content Include="Images\colorpicker\colorpicker_submit.png" />
+    <Content Include="Images\colorpicker\custom_background.png" />
+    <Content Include="Images\colorpicker\custom_hex.png" />
+    <Content Include="Images\colorpicker\custom_hsb_b.png" />
+    <Content Include="Images\colorpicker\custom_hsb_h.png" />
+    <Content Include="Images\colorpicker\custom_hsb_s.png" />
+    <Content Include="Images\colorpicker\custom_indic.gif" />
+    <Content Include="Images\colorpicker\custom_rgb_b.png" />
+    <Content Include="Images\colorpicker\custom_rgb_g.png" />
+    <Content Include="Images\colorpicker\custom_rgb_r.png" />
+    <Content Include="Images\colorpicker\custom_submit.png" />
+    <Content Include="Images\colorpicker\select.png" />
+    <Content Include="Images\colorpicker\select2.png" />
+    <Content Include="Images\colorpicker\slider.png" />
+    <Content Include="Images\comlogo.png" />
+    <Content Include="Images\controls.png" />
+    <Content Include="Images\droparrow.png" />
+    <Content Include="Images\glyphicons-halflings-white.png" />
+    <Content Include="Images\glyphicons-halflings.png" />
+    <Content Include="Images\Home.png" />
+    <Content Include="Images\iconsweets-icons-white.png" />
+    <Content Include="Images\iconsweets-icons.png" />
+    <Content Include="Images\icons\bar.png" />
+    <Content Include="Images\icons\icon-archive.png" />
+    <Content Include="Images\icons\icon-cart.png" />
+    <Content Include="Images\icons\icon-event.png" />
+    <Content Include="Images\icons\icon-help.png" />
+    <Content Include="Images\icons\icon-images.png" />
+    <Content Include="Images\icons\message.png" />
+    <Content Include="Images\icons\search.png" />
+    <Content Include="Images\icons\users.png" />
+    <Content Include="Images\image.png" />
+    <Content Include="Images\leftpanelbg.png" />
+    <Content Include="Images\loaders\loader1.gif" />
+    <Content Include="Images\loaders\loader10.gif" />
+    <Content Include="Images\loaders\loader11.gif" />
+    <Content Include="Images\loaders\loader12.gif" />
+    <Content Include="Images\loaders\loader13.gif" />
+    <Content Include="Images\loaders\loader14.gif" />
+    <Content Include="Images\loaders\loader15.gif" />
+    <Content Include="Images\loaders\loader16.gif" />
+    <Content Include="Images\loaders\loader17.gif" />
+    <Content Include="Images\loaders\loader18.gif" />
+    <Content Include="Images\loaders\loader19.gif" />
+    <Content Include="Images\loaders\loader2.gif" />
+    <Content Include="Images\loaders\loader20.gif" />
+    <Content Include="Images\loaders\loader21.gif" />
+    <Content Include="Images\loaders\loader22.gif" />
+    <Content Include="Images\loaders\loader23.gif" />
+    <Content Include="Images\loaders\loader24.gif" />
+    <Content Include="Images\loaders\loader25.gif" />
+    <Content Include="Images\loaders\loader26.gif" />
+    <Content Include="Images\loaders\loader27.gif" />
+    <Content Include="Images\loaders\loader28.gif" />
+    <Content Include="Images\loaders\loader29.gif" />
+    <Content Include="Images\loaders\loader3.gif" />
+    <Content Include="Images\loaders\loader30.gif" />
+    <Content Include="Images\loaders\loader4.gif" />
+    <Content Include="Images\loaders\loader5.gif" />
+    <Content Include="Images\loaders\loader6.gif" />
+    <Content Include="Images\loaders\loader7.gif" />
+    <Content Include="Images\loaders\loader8.gif" />
+    <Content Include="Images\loaders\loader9.gif" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\loading_background.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\menuarrow.png" />
+    <Content Include="Images\minimize.png" />
+    <Content Include="Images\next.png" />
+    <Content Include="Images\overlay.png" />
+    <Content Include="Images\photos\1.png" />
+    <Content Include="Images\photos\audio.png" />
+    <Content Include="Images\photos\thumb1.png" />
+    <Content Include="Images\photos\thumb10.png" />
+    <Content Include="Images\photos\thumb2.png" />
+    <Content Include="Images\photos\thumb3.png" />
+    <Content Include="Images\photos\thumb4.png" />
+    <Content Include="Images\photos\thumb5.png" />
+    <Content Include="Images\photos\thumb6.png" />
+    <Content Include="Images\photos\thumb7.png" />
+    <Content Include="Images\photos\thumb8.png" />
+    <Content Include="Images\photos\thumb9.png" />
+    <Content Include="Images\photos\video.png" />
+    <Content Include="Images\prev.png" />
+    <Content Include="Images\profilethumb.png" />
+    <Content Include="Images\sitecorelogo.png" />
+    <Content Include="Images\sitecorelogo2.png" />
+    <Content Include="Images\sliderhor.png" />
+    <Content Include="Images\sliderver.png" />
+    <Content Include="Images\spinner.png" />
+    <Content Include="Images\thumbs\audio.png" />
+    <Content Include="Images\thumbs\doc.png" />
+    <Content Include="Images\thumbs\image1.png" />
+    <Content Include="Images\thumbs\image2.png" />
+    <Content Include="Images\thumbs\image3.png" />
+    <Content Include="Images\thumbs\image4.png" />
+    <Content Include="Images\thumbs\image5.png" />
+    <Content Include="Images\thumbs\image6.png" />
+    <Content Include="Images\thumbs\thumb1.png" />
+    <Content Include="Images\thumbs\thumb10.png" />
+    <Content Include="Images\thumbs\thumb2.png" />
+    <Content Include="Images\thumbs\thumb3.png" />
+    <Content Include="Images\thumbs\thumb4.png" />
+    <Content Include="Images\thumbs\thumb5.png" />
+    <Content Include="Images\thumbs\thumb6.png" />
+    <Content Include="Images\thumbs\thumb7.png" />
+    <Content Include="Images\thumbs\thumb8.png" />
+    <Content Include="Images\thumbs\thumb9.png" />
+    <Content Include="Images\thumbs\video.png" />
+    <Content Include="Images\TopLogo.png" />
+    <Content Include="Images\TopLogo2.png" />
+    <Content Include="Images\transwhite.png" />
+    <Content Include="Images\transwhite2.png" />
+    <Content Include="Images\uniform\bg-input-focus.png" />
+    <Content Include="Images\uniform\bg-input.png" />
+    <Content Include="Images\uniform\sprite.png" />
+    <Content Include="Images\user-icon.png" />
+    <Content Include="Js\bootstrap-fileupload.min.js" />
+    <Content Include="Js\bootstrap-timepicker.min.js" />
+    <Content Include="Js\bootstrap.min.js" />
+    <Content Include="Js\custom.js" />
+    <Content Include="Js\flot\excanvas.min.js" />
+    <Content Include="Js\flot\jquery.colorhelpers.min.js" />
+    <Content Include="Js\flot\jquery.flot.crosshair.min.js" />
+    <Content Include="Js\flot\jquery.flot.fillbetween.min.js" />
+    <Content Include="Js\flot\jquery.flot.image.min.js" />
+    <Content Include="Js\flot\jquery.flot.min.js" />
+    <Content Include="Js\flot\jquery.flot.navigate.min.js" />
+    <Content Include="Js\flot\jquery.flot.pie.min.js" />
+    <Content Include="Js\flot\jquery.flot.resize.min.js" />
+    <Content Include="Js\flot\jquery.flot.selection.min.js" />
+    <Content Include="Js\flot\jquery.flot.stack.min.js" />
+    <Content Include="Js\flot\jquery.flot.symbol.min.js" />
+    <Content Include="Js\flot\jquery.flot.threshold.min.js" />
+    <Content Include="Js\flot\LICENSE.txt" />
+    <Content Include="Js\jqColorPicker.js" />
+    <Content Include="Js\jquery-1.10.2.js" />
+    <Content Include="Js\jquery-1.9.1.js" />
+    <Content Include="Js\jquery-migrate-1.1.1.min.js" />
+    <Content Include="Js\jquery-ui-1.9.2.min.js" />
+    <Content Include="Js\jquery-ui-timepicker-addon.js" />
+    <Content Include="Js\jquery.alerts.js" />
+    <Content Include="Js\jquery.autogrow-textarea.js" />
+    <Content Include="Js\jquery.colorbox-min.js" />
+    <Content Include="Js\jquery.cookie.js" />
+    <Content Include="Js\jquery.dataTables.min.js" />
+    <Content Include="Js\jquery.datetimepicker.full.min.js" />
+    <Content Include="Js\jquery.isotope.min.js" />
+    <Content Include="Js\jquery.jgrowl.js" />
+    <Content Include="Js\jquery.slimscroll.js" />
+    <Content Include="Js\jquery.smartWizard.min.js" />
+    <Content Include="Js\jquery.tagsinput.min.js" />
+    <Content Include="Js\jquery.uniform.min.js" />
+    <Content Include="Js\jquery.validate.min.js" />
+    <Content Include="Js\modernizr.min.js" />
+    <Content Include="Js\responsive-tables.js" />
+    <Content Include="Js\ui.spinner.min.js" />
+    <Content Include="Js\wysiwyg.js" />
+    <Content Include="Views\ServiceStatus\Status Dashboard Layout.cshtml" />
+    <Content Include="Views\Shared\_DashboardLayout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\ServiceStatus\ServiceStatus.cshtml" />
+    <Content Include="Views\ServiceMaintenance\ServiceMaintenance.cshtml" />
+    <None Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ServiceStatus\ServiceMaintenanceController.cs" />
+    <Compile Include="Controllers\ServiceStatus\ServiceStatusController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\HtmlHelperExtensions.cs" />
+    <Compile Include="Models\ServiceStatus\ServiceMaintenanceModel.cs" />
+    <Compile Include="Models\ServiceStatus\ServiceStatusModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56212</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56212/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

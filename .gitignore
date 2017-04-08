@@ -1,0 +1,4 @@
+packages/
+*/bin/
+*/obj/
+Sitecore.OperationsSuite.Web/Properties/PublishProfiles/

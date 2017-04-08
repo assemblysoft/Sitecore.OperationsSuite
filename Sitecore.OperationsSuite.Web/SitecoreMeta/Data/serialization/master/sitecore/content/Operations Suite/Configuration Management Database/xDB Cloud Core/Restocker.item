@@ -1,0 +1,52 @@
+----item----
+version: 1
+id: {8276A65E-F374-416C-8DBC-46D0AC7D92C4}
+database: master
+path: /sitecore/content/Operations Suite/Configuration Management Database/xDB Cloud Core/Restocker
+parent: {3AA231F0-0BD4-44A8-BE5E-D08B867D2172}
+name: Restocker
+master: {00000000-0000-0000-0000-000000000000}
+template: {A07FC4F1-1A9C-416E-A72D-48027F57419F}
+templatekey: Logical Item
+created: 20170401T105324Z
+
+----version----
+language: en
+version: 1
+revision: c3c8d80a-fbef-4923-af23-828901941fad
+
+----field----
+field: {064E118C-8868-4CBE-8F8F-EC932D8B06F0}
+name: Name
+key: name
+content-length: 9
+
+Restocker
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20170401T105324Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c3c8d80a-fbef-4923-af23-828901941fad
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20170401T105324Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin

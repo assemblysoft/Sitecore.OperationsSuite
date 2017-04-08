@@ -1,0 +1,53 @@
+﻿.SectionHeading {
+    background-color: lightgray;
+    padding: 10px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+a.ViewAll {
+    color: black;
+    margin-top: 10px;
+}
+
+.Maintenance {
+    border: solid 1px lightgray;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.Maintenance h4{
+    margin-bottom: 10px;
+}
+
+.StatusDate {
+    margin-bottom:20px;
+}
+
+.Status {
+    margin-bottom:15px;
+    border-bottom:solid 1px lightgray;
+}
+.Status:last-child {
+    border: none;
+}
+
+.validator {
+    margin-left:215px;
+    display:block;
+}
+
+.ui-timepicker-select {
+    width:auto;
+}
+
+.widgettitle a.back {
+    float:right;
+    color:white;
+    font-size:12px;
+    text-decoration:none;
+}
+
+.widgettitle a.back:before {
+    content: '< ';
+}
