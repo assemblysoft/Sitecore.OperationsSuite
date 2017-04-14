@@ -14,9 +14,9 @@ created: 20170408T163428Z
 field: {E64AD073-DFCC-4D20-8C0B-FE5AA6226CD7}
 name: Controller
 key: controller
-content-length: 101
+content-length: 109
 
-Sitecore.Cloud.Monitor.Controllers.ServiceStatus.ServiceMaintenanceController, Sitecore.Cloud.Monitor
+Sitecore.OperationsSuite.Controllers.ServiceStatus.ServiceMaintenanceController, Sitecore.OperationsSuite.Web
 ----field----
 field: {DED9E431-3604-4921-A4B3-A6EC7636A5B6}
 name: Controller Action
@@ -27,7 +27,7 @@ ScheduledMaintenances
 ----version----
 language: en
 version: 1
-revision: 14c2e326-1f5f-4cd7-b599-060f729ea1d5
+revision: c773a4d0-a536-4c4f-a366-757159fa4b5d
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -56,14 +56,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-14c2e326-1f5f-4cd7-b599-060f729ea1d5
+c773a4d0-a536-4c4f-a366-757159fa4b5d
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20170408T163431Z
+20170408T225645Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

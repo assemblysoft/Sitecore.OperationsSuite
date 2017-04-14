@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Sitecore.OperationsSuite.Web.Models.ServiceStatus
+namespace Sitecore.OperationsSuite.Models.ServiceStatus
 {
 
   public class StatusModel

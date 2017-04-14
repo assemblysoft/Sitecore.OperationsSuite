@@ -14,9 +14,9 @@ created: 20170401T162645Z
 field: {E64AD073-DFCC-4D20-8C0B-FE5AA6226CD7}
 name: Controller
 key: controller
-content-length: 96
+content-length: 104
 
-Sitecore.Cloud.Monitor.Controllers.ServiceStatus.ServiceStatusController, Sitecore.Cloud.Monitor
+Sitecore.OperationsSuite.Controllers.ServiceStatus.ServiceStatusController, Sitecore.OperationsSuite.Web
 ----field----
 field: {DED9E431-3604-4921-A4B3-A6EC7636A5B6}
 name: Controller Action
@@ -27,7 +27,7 @@ ServiceStatus
 ----version----
 language: en
 version: 1
-revision: b9b88670-1225-4a3e-b569-2bb5979ebf18
+revision: 6bbb7804-0694-4736-a9d1-26f4997274d6
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -56,14 +56,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-b9b88670-1225-4a3e-b569-2bb5979ebf18
+6bbb7804-0694-4736-a9d1-26f4997274d6
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20170401T203140Z
+20170408T225703Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

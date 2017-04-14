@@ -13,7 +13,7 @@ using Sitecore.Mvc.Presentation;
 using Sitecore.Shell.Applications.ContentEditor;
 using DateTime = System.DateTime;
 
-namespace Sitecore.OperationsSuite.Web.Models.ServiceStatus
+namespace Sitecore.OperationsSuite.Models.ServiceStatus
 {
   public class ServiceMaintenanceModel
   {

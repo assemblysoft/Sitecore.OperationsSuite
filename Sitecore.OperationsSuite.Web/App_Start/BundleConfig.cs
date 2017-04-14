@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace Sitecore.OperationsSuite.Web
+namespace Sitecore.OperationsSuite
 {
     public class BundleConfig
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Web;
 using System.Web.Mvc;
-using Sitecore.OperationsSuite.Web.Models.ServiceStatus;
+using Sitecore.OperationsSuite.Models.ServiceStatus;
 using Sitecore.Configuration;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.Linq;
@@ -14,7 +14,7 @@ using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Mvc.Presentation;
 
-namespace Sitecore.OperationsSuite.Web.Controllers.ServiceStatus
+namespace Sitecore.OperationsSuite.Controllers.ServiceStatus
 {
   public class ServiceMaintenanceController : Controller
   {

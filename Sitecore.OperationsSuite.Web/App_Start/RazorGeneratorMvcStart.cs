@@ -3,9 +3,9 @@ using System.Web.Mvc;
 using System.Web.WebPages;
 using RazorGenerator.Mvc;
 
-[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(Sitecore.OperationsSuite.Web.RazorGeneratorMvcStart), "Start")]
+[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(Sitecore.OperationsSuite.RazorGeneratorMvcStart), "Start")]
 
-namespace Sitecore.OperationsSuite.Web {
+namespace Sitecore.OperationsSuite {
     public static class RazorGeneratorMvcStart {
         public static void Start() {
             var engine = new PrecompiledMvcEngine(typeof(RazorGeneratorMvcStart).Assembly) {
