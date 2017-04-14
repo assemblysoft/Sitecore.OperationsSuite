@@ -1,34 +1,41 @@
 ----item----
 version: 1
-id: {829C7992-2BEB-4B14-AC8A-E89D487AE2D2}
+id: {2CE528DF-59C5-4319-A083-D5740195250E}
 database: master
-path: /sitecore/content/Operations Suite/Sites/Status Dashboard/Metrics/xDB Cloud Core
-parent: {AD3A1983-55F5-471D-9791-A60AFF9FDF8D}
-name: xDB Cloud Core
+path: /sitecore/system/Modules/Operations Suite/Definitions/Monitoring/Status/P4 - Running
+parent: {AAB0A90D-029C-46D4-AAE5-14547DECF9A6}
+name: P4 - Running
 master: {00000000-0000-0000-0000-000000000000}
-template: {795EA735-F4CE-4D43-87CD-17D5A0078EFF}
-templatekey: Metric
-created: 20170403T194025Z
+template: {EDF83947-01AC-4F16-ADA3-98091680F8C4}
+templatekey: Status
+created: 20170414T214337Z
 
-----field----
-field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
-name: __Sortorder
-key: __sortorder
-content-length: 3
-
-100
 ----version----
 language: en
 version: 1
-revision: fd94fe31-68d7-4a0c-9531-ab3725f131c5
+revision: ee981cef-4366-4833-9e19-70da51af813d
 
 ----field----
-field: {AD841D3A-A4CC-42D6-A23C-ABE11E507844}
+field: {F8677A17-018F-4011-A265-619E0F398EF5}
 name: Name
 key: name
-content-length: 25
+content-length: 7
 
-xDB Cloud - Core Services
+Running
+----field----
+field: {0E130F12-FB91-4CC2-8C6B-12B751121B7E}
+name: Color
+key: color
+content-length: 5
+
+green
+----field----
+field: {D328978F-67D2-4C9F-AC10-5573FB560273}
+name: Default Message
+key: default message
+content-length: 29
+
+Service is operating normally
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -42,7 +49,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20170403T194025Z
+20170414T214337Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -56,14 +63,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-fd94fe31-68d7-4a0c-9531-ab3725f131c5
+ee981cef-4366-4833-9e19-70da51af813d
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20170414T221433Z
+20170414T214447Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

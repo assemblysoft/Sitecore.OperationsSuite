@@ -1,19 +1,26 @@
 ----item----
 version: 1
-id: {8BC00337-5F06-4707-8C72-9A1A1FF57402}
+id: {BE708C09-475A-4AA7-8AB4-64C9382952BA}
 database: master
-path: /sitecore/content/Operations Suite/Configuration Management Database/Email Cloud Sparkpost
-parent: {E1FD68EF-620C-4421-9DD6-242FA2330439}
-name: Email Cloud Sparkpost
+path: /sitecore/templates/Sitecore Operations Suite/Monitoring/Metric/Static Override
+parent: {795EA735-F4CE-4D43-87CD-17D5A0078EFF}
+name: Static Override
 master: {00000000-0000-0000-0000-000000000000}
-template: {CB869E4E-BDF1-4CCA-A19E-12DE019EC390}
-templatekey: Service
-created: 20170401T104918Z
+template: {E269FBB5-3750-427A-9149-7AA950B49301}
+templatekey: Template section
+created: 20170414T213405Z
 
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+200
 ----version----
 language: en
 version: 1
-revision: 7dc70d29-aaa6-49cf-b4a2-d6cd7fd08de3
+revision: 6851b781-55f5-4a72-9b40-e1813e6b28aa
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -28,28 +35,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20170401T104918Z
-----field----
-field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
-name: __Created by
-key: __created by
-content-length: 14
-
-sitecore\Admin
+20170414T213405Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-7dc70d29-aaa6-49cf-b4a2-d6cd7fd08de3
+6851b781-55f5-4a72-9b40-e1813e6b28aa
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20170401T104918Z
+20170414T225026Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

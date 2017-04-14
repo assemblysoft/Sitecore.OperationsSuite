@@ -1,40 +1,40 @@
 ----item----
 version: 1
-id: {AD3A1983-55F5-471D-9791-A60AFF9FDF8D}
+id: {70C49827-B9B0-4156-B690-D01BEB5D48AB}
 database: master
-path: /sitecore/content/Operations Suite/Sites/Status Dashboard/Metrics
-parent: {81865401-FA7F-4E8C-A640-A637D0E3DB11}
-name: Metrics
+path: /sitecore/templates/Sitecore Operations Suite/Monitoring/Metric/Static Override/Activate Static Mode
+parent: {BE708C09-475A-4AA7-8AB4-64C9382952BA}
+name: Activate Static Mode
 master: {00000000-0000-0000-0000-000000000000}
-template: {A87A00B1-E6DB-45AB-8B54-636FEC3B5523}
-templatekey: Folder
-created: 20170401T123945Z
+template: {455A3E98-A627-4B40-8035-E683A0331AC7}
+templatekey: Template field
+created: 20170414T213405Z
 
 ----field----
-field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
-name: __Icon
-key: __icon
-content-length: 33
+field: {AB162CC0-DC80-4ABF-8871-998EE5D7BA32}
+name: Type
+key: type
+content-length: 8
 
-Applications/32x32/gears_view.png
+Checkbox
+----field----
+field: {BE351A73-FCB0-4213-93FA-C302D8AB4F51}
+name: Shared
+key: shared
+content-length: 0
+
+
 ----field----
 field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
 name: __Sortorder
 key: __sortorder
-content-length: 2
+content-length: 3
 
-50
-----field----
-field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
-name: __Masters
-key: __masters
-content-length: 77
-
-{795EA735-F4CE-4D43-87CD-17D5A0078EFF}|{3E7DBE8A-3688-426F-8F4A-28F02764EFDE}
+100
 ----version----
 language: en
 version: 1
-revision: 1adbd225-470a-4156-9d5e-203081da43fa
+revision: 3d225e9a-fd77-4d64-99ba-ab24882e8dbf
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -49,21 +49,28 @@ name: __Created
 key: __created
 content-length: 16
 
-20170401T123945Z
+20170414T213406Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-1adbd225-470a-4156-9d5e-203081da43fa
+3d225e9a-fd77-4d64-99ba-ab24882e8dbf
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20170414T221629Z
+20170414T225026Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

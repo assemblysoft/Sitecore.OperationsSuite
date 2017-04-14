@@ -7,7 +7,7 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th class="greyCell">Status</th>
+        <th width="120" class="greyCell">Status</th>
         <th class="greyCell">Service Name</th>
         <th class="greyCell">Comments</th>
       </tr>
@@ -17,7 +17,7 @@
       @foreach (var service in Model)
       {
         <tr>
-          <td>
+          <td width="120">
             <div class="status" style="background: @service.Color"></div> &nbsp; @service.Status
           </td>
           <td>@service.Name</td>
