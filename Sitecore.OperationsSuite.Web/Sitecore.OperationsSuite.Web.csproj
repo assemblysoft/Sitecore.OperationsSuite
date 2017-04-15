@@ -362,6 +362,7 @@
     <Content Include="Js\.DS_Store" />
     <Content Include="App_Config\Include\OperationsSuite\Sitecore.OpsSuite.ContentSearch.Lucene.config" />
     <Content Include="App_Config\Include\OperationsSuite\Sitecore.OpsSuite.Sites.StatusPage.config" />
+    <Content Include="App_Config\Include\OperationsSuite\Sitecore.OpsSuite.Utils.config" />
     <None Include="Properties\PublishProfiles\Localhost.pubxml" />
     <Content Include="Images\barmenu.png" />
     <Content Include="Images\bcarrow.png" />
