@@ -34,8 +34,19 @@ namespace Sitecore.OperationsSuite.Controllers.ServiceStatus
             .OrderByDescending(item => item.StartDate)
             .Take(maintenancesLimit);
 
-        return searchQuery.GetResults().Select(sq => new ServiceMaintenanceEntryModel(sq.Document))
+        var serviceMaintenanceEntries = searchQuery.GetResults()
+          .Select(sq => new ServiceMaintenanceEntryModel(sq.Document))
           .ToList(); // ugly workaround due to LINQ nature :( - https://sitecorebasics.wordpress.com/2014/03/19/cannot-access-a-disposed-object-object-name-lucenesearchcontext/
+
+        serviceMaintenanceEntries.ForEach(
+          smem => smem.Updates = context.GetQueryable<ServiceMaintenanceUpdateEntryModelResultItem>()
+            .Where(item => item.Paths.Contains(smem.ItemId) && item.ItemId != smem.ItemId)
+            .OrderByDescending(x => x.Timestamp)
+            .GetResults()
+            .Select(r => r.Document)
+            .ToList());
+
+        return serviceMaintenanceEntries;
       }
     }
 

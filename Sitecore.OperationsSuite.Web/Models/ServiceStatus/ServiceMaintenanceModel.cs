@@ -20,7 +20,6 @@ namespace Sitecore.OperationsSuite.Models.ServiceStatus
     public string Title { get; set; }
 
     public IEnumerable<ServiceMaintenanceEntryModel> Entries { get; set; }
-    
   }
 
   public class ServiceMaintenanceEntryModelResultItem : SearchResultItem
@@ -44,17 +43,29 @@ namespace Sitecore.OperationsSuite.Models.ServiceStatus
     public bool Resolved { get; set; }
   }
 
+  public class ServiceMaintenanceUpdateEntryModelResultItem : SearchResultItem
+  {
+    [IndexField("update_title")]
+    public string Title { get; set; }
+
+    [IndexField("update_text")]
+    public string Description { get; set; }
+
+    [IndexField("update_timestamp")]
+    public DateTime Timestamp { get; set; }
+  }
+
   public class ServiceMaintenanceEntryModel : IRenderingModel
   {
     public ServiceMaintenanceEntryModel()
     {
-      
     }
 
     public ServiceMaintenanceEntryModel(ServiceMaintenanceEntryModelResultItem searchResult)
     {
       var item = searchResult;
 
+      this.ItemId = item.ItemId;
       this.Name = item.NameField;
       this.Description = item.Description;
 
@@ -64,6 +75,8 @@ namespace Sitecore.OperationsSuite.Models.ServiceStatus
       this.InProgress = item.InProgress;
       this.Resolved = item.Resolved;
     }
+    
+    public ID ItemId { get; set; }
 
     public string Name { get; set; }
 
@@ -77,8 +90,11 @@ namespace Sitecore.OperationsSuite.Models.ServiceStatus
 
     public bool Resolved { get; set; }
 
+    public IEnumerable<ServiceMaintenanceUpdateEntryModelResultItem> Updates { get; set; }
+
     public void Initialize(Rendering rendering)
     {
+      this.ItemId = rendering.Item.ID;
       this.Name = rendering.Item["Name"];
       this.Description = rendering.Item["Description"];
 

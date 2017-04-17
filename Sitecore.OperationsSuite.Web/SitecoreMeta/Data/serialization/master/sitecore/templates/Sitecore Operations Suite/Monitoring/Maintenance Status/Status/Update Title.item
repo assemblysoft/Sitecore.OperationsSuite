@@ -2,9 +2,9 @@
 version: 1
 id: {A7E30913-723B-4995-B230-DF1CA7AF8928}
 database: master
-path: /sitecore/templates/Sitecore Operations Suite/Monitoring/Maintenance Status/Status/Name
+path: /sitecore/templates/Sitecore Operations Suite/Monitoring/Maintenance Status/Status/Update Title
 parent: {87AA9CC3-8A1D-4DE2-9415-07C2328B3CB1}
-name: Name
+name: Update Title
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
@@ -27,7 +27,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: ed3f5597-cee8-4607-b8f1-197446a5778b
+revision: bf7fa2a1-4dd1-4ba5-9cb5-83d29aa828fe
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -56,14 +56,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-ed3f5597-cee8-4607-b8f1-197446a5778b
+bf7fa2a1-4dd1-4ba5-9cb5-83d29aa828fe
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20170403T203613Z
+20170417T201518Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

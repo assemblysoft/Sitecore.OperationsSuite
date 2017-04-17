@@ -13,14 +13,42 @@
   foreach (var maintenance in Model.Entries)
   {
     <div class="Maintenance">
+      @if (maintenance.InProgress || maintenance.Resolved)
+      {
+        <h3 class="StatusDate">
+          <i class="fa fa-calendar">&nbsp;</i>
+          @Html.PrintOnlyDateUtc(maintenance.Resolved ? maintenance.EndDate : DateTime.UtcNow)
+        </h3>
+      }
+
       <h4>@maintenance.Name</h4>
-      <span><i class="fa fa-calendar">&nbsp</i>@Html.ScheduledForUtc(maintenance.StartDate, maintenance.EndDate)</span>
-      <p>
-        @Html.Raw(maintenance.Description)
+
+      @if (!maintenance.InProgress && !maintenance.Resolved)
+      {
+        <span><i class="fa fa-calendar">&nbsp</i>@Html.ScheduledForUtc(maintenance.StartDate, maintenance.EndDate)</span>
+      }
+
+      <p></p>
+      @if (maintenance.Updates.Any())
+      {
+        foreach (var update in maintenance.Updates)
+        {
+          <h6>@update.Name</h6>
+          <p>
+            @Html.Raw(update.Description)
+          </p>
+          <small>- @Html.PrintDateUtc(update.Timestamp, "Posted on")</small>
+          <p></p>
+        }
+      }
+      else
+      {
+        <p>
+          @Html.Raw(maintenance.Description)
+        </p>
         <small>- @Html.PrintDateUtc(maintenance.StartDate, "Posted on")</small>
-        <br/>
-        In Progress: @Html.Raw(maintenance.InProgress)
-      </p>
+        <p></p>
+      }
     </div>
   }
 }

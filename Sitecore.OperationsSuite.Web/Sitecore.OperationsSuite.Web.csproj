@@ -578,6 +578,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sitecore.OperationsSuite.Monitoring\Sitecore.OperationsSuite.Monitoring.csproj">
+      <Project>{a4bc9770-3ecf-49f8-b21e-0aa4d1c2cf1a}</Project>
+      <Name>Sitecore.OperationsSuite.Monitoring</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

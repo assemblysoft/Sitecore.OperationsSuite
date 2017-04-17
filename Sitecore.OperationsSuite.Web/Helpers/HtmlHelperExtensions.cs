@@ -12,7 +12,12 @@ namespace System.Web.Mvc
             return $"{prefix} {postedDate.ToString("MMM dd, HH:mm")} UTC";
         }
 
-        public static String Truncate(this HtmlHelper htmlHelper, String content, Int32 length)
+        public static String PrintOnlyDateUtc(this HtmlHelper htmlHelper, DateTime date)
+        {
+          return $"{date.ToString("MMM dd, yyyy")}";
+        }
+
+    public static String Truncate(this HtmlHelper htmlHelper, String content, Int32 length)
         {
             if (String.IsNullOrEmpty(content))
                 return content;
