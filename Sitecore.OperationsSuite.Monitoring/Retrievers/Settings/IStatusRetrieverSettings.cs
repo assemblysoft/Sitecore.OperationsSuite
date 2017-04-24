@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sitecore.OperationsSuite.Monitoring
+namespace Sitecore.OperationsSuite.Monitoring.Retrievers.Settings
 {
-    public class Class1
-    {
-    }
+  public interface IStatusRetrieverSettings
+  {
+  }
 }

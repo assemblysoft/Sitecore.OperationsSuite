@@ -10,6 +10,9 @@ using Sitecore.Data.Managers;
 using Sitecore.Globalization;
 using Sitecore.Mvc.Extensions;
 using Sitecore.Mvc.Presentation;
+using Sitecore.OperationsSuite.Monitoring;
+using Sitecore.OperationsSuite.Monitoring.Retrievers;
+using Sitecore.Reflection;
 using Version = Sitecore.Data.Version;
 
 namespace Sitecore.OperationsSuite.Controllers.ServiceStatus
@@ -19,10 +22,48 @@ namespace Sitecore.OperationsSuite.Controllers.ServiceStatus
     public static ID MetricTemplateId = ID.Parse("{795EA735-F4CE-4D43-87CD-17D5A0078EFF}");
     public static ID MetricGroupTemplateId = ID.Parse("{3E7DBE8A-3688-426F-8F4A-28F02764EFDE}");
 
+    public static ID StatusDefinitions = ID.Parse("{AAB0A90D-029C-46D4-AAE5-14547DECF9A6}");
+
     public Item GetDatasourceItem()
     {
       var datasourceId = RenderingContext.Current.Rendering.DataSource;
       return ID.IsID(datasourceId) ? Context.Database.GetItem(datasourceId) : null;
+    }
+
+    protected ID GetStatusItemIdByStatusSeverity(StatusSeverity statusSeverity)
+    {
+      var statuses = Context.Database.GetItem(StatusDefinitions);
+
+      foreach (Item item in statuses.GetChildren())
+      {
+        if (int.Parse(item["Severity"]) == (int)statusSeverity)
+        {
+          return item.ID;
+        }
+      }
+
+      return null;
+    }
+
+    protected ServiceStatusModel GetDefaultStatusValues(ID statusItemId)
+    {
+      var statusItemResolved = ID.IsNullOrEmpty(statusItemId) ? null : Context.Database.GetItem(statusItemId);
+      if (statusItemResolved != null)
+      {
+        return new ServiceStatusModel()
+        {
+          Color = statusItemResolved["Color"],
+          Status = statusItemResolved["Name"],
+          Message = statusItemResolved["Default Message"]
+        };
+      }
+
+      return new ServiceStatusModel()
+      {
+        Color = "white",
+        Message = "No information",
+        Status = "Undefined"
+      };
     }
 
     protected ServiceStatusModel ItemDefinitionToViewModel(Item item)
@@ -42,50 +83,59 @@ namespace Sitecore.OperationsSuite.Controllers.ServiceStatus
       {
         if (item["Activate Static Mode"] == "1")
         {
-          var staticColor = "white";
-          var staticStatusName = "None";
-          var defaultStaticMessage = string.Empty;
-
           ID statusItem;
-          if (ID.TryParse(item["Status"], out statusItem))
-          {
-            var statusItemResolved = Context.Database.GetItem(statusItem);
-            if (statusItemResolved != null)
-            {
-              staticColor = statusItemResolved["Color"];
-              staticStatusName = statusItemResolved["Name"];
-              defaultStaticMessage = statusItemResolved["Default Message"];
-            }
-          }
-
+          var overrideDefaults = (ID.TryParse(item["Status"], out statusItem)) ? this.GetDefaultStatusValues(statusItem) : new ServiceStatusModel();
+          
           return new ServiceStatusModel()
           {
-            Color = staticColor,
-            Message = item["Message"] ?? defaultStaticMessage,
+            Color = overrideDefaults.Color,
+            Message = item["Message"] ?? overrideDefaults.Message,
             Name = item["Name"],
-            Status = staticStatusName
+            Status = overrideDefaults.Status
           };
         }
-        else
+        else if (!string.IsNullOrEmpty(item["Implementation"]))
         {
-          return new ServiceStatusModel()
+          IStatusRetriever statusRetriever = ReflectionUtil.CreateObject(Type.GetType(item["Implementation"])) as IStatusRetriever;
+          if (statusRetriever != null)
           {
-            Color = "green",
-            Message = "Service is operating normally def",
-            Name = item["Name"],
-            Status = "Running"
-          };
+            // Get Parameters
+            // NO IMPLEMENTATION NOW
+
+            // Execute
+            var result = statusRetriever.GetStatus();
+
+            // Parse, transform
+
+            ID statusItemId = this.GetStatusItemIdByStatusSeverity(result.Severity);
+            var statusDefaults = this.GetDefaultStatusValues(statusItemId);
+
+            return new ServiceStatusModel()
+            {
+              Color = statusDefaults.Color,
+              Message = result.Message ?? statusDefaults.Message,
+              Name = item["Name"],
+              Status = statusDefaults.Status
+            };
+          }
         }
       }
 
-      return null;
+      // if fail to recognize - everything is OK :)
+      return new ServiceStatusModel()
+      {
+        Color = "green",
+        Message = "Service is operating normally",
+        Name = item["Name"],
+        Status = "Running"
+      };
     }
-      
+
     // GET: ServiceStatus
     public ActionResult ServiceStatus()
     {
       var metrics = this.GetDatasourceItem();
-      
+
       var model = metrics.GetChildren().Select(this.ItemDefinitionToViewModel).Where(i => i != null);
 
       return View(model);
