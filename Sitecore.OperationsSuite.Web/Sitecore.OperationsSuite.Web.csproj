@@ -555,8 +555,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Caching\StatusCache.cs" />
+    <Compile Include="Caching\StatusCacheAgent.cs" />
+    <Compile Include="Caching\StatusCacheManager.cs" />
     <Compile Include="Controllers\ServiceStatus\ServiceMaintenanceController.cs" />
     <Compile Include="Controllers\ServiceStatus\ServiceStatusController.cs" />
+    <Compile Include="Controllers\ServiceStatus\ServiceStatusManager.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

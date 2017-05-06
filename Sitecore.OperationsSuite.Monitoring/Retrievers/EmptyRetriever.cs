@@ -13,7 +13,7 @@ namespace Sitecore.OperationsSuite.Monitoring.Retrievers
     {
       return new Status()
       {
-        Message = "Automatic status",
+        Message = "Automatic status on " + DateTime.UtcNow.ToString("yyyyMMddThhmmss"),
         Severity = StatusSeverity.Information
       };
     }

@@ -14,13 +14,13 @@ created: 20170401T162430Z
 field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
 name: __Renderings
 key: __renderings
-content-length: 920
+content-length: 968
 
-<r xmlns:xsd="http://www.w3.org/2001/XMLSchema" ><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{E26F2576-5B41-4E79-951F-B9903CD00CAA}"><p uid="{A922F763-0CEA-4233-8091-233EC0925CF8}" key="scmmain" md="/sitecore/layout/Placeholder Settings/Sitecore Operations Suite/scmmain" /><r ds="{AD3A1983-55F5-471D-9791-A60AFF9FDF8D}" id="{6175239B-2929-49AB-BAA5-A97CA7949D6B}" par="" ph="scmmain" uid="{2887A6A3-BD28-46A3-B051-982322E4FC42}" /><r ds="{5960DDB3-4054-4DA4-96FE-7319DA504E9A}" id="{70BBA98D-DD91-4F1A-B0DD-3C57FB9E9B2A}" par="" ph="scmmain" uid="{345091FA-206C-497B-BD4D-9D56B4C2ED0C}" /><r ds="{5960DDB3-4054-4DA4-96FE-7319DA504E9A}" id="{E3CED8AA-769A-429E-AE73-FAE93E8F7D5B}" par="" ph="scmmain" uid="{175C1DD3-EC4A-4731-A830-4F22C58F1F71}" /><r ds="{5960DDB3-4054-4DA4-96FE-7319DA504E9A}" id="{6CCBC65F-ED45-4EDF-9BAC-8541ACC22773}" par="" ph="scmmain" uid="{F47FB160-6653-4563-82A1-B850F7491FDC}" /></d></r>
+<r xmlns:xsd="http://www.w3.org/2001/XMLSchema" ><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{E26F2576-5B41-4E79-951F-B9903CD00CAA}"><p uid="{A922F763-0CEA-4233-8091-233EC0925CF8}" key="scmmain" md="/sitecore/layout/Placeholder Settings/Sitecore Operations Suite/scmmain" /><r ds="{AD3A1983-55F5-471D-9791-A60AFF9FDF8D}" id="{6175239B-2929-49AB-BAA5-A97CA7949D6B}" par="" ph="scmmain" uid="{2887A6A3-BD28-46A3-B051-982322E4FC42}" /><r cac="1" ds="{5960DDB3-4054-4DA4-96FE-7319DA504E9A}" id="{70BBA98D-DD91-4F1A-B0DD-3C57FB9E9B2A}" par="" ph="scmmain" uid="{345091FA-206C-497B-BD4D-9D56B4C2ED0C}" vbd="1" /><r cac="1" ds="{5960DDB3-4054-4DA4-96FE-7319DA504E9A}" id="{E3CED8AA-769A-429E-AE73-FAE93E8F7D5B}" par="" ph="scmmain" uid="{175C1DD3-EC4A-4731-A830-4F22C58F1F71}" vbd="1" /><r cac="1" ds="{5960DDB3-4054-4DA4-96FE-7319DA504E9A}" id="{6CCBC65F-ED45-4EDF-9BAC-8541ACC22773}" par="" ph="scmmain" uid="{F47FB160-6653-4563-82A1-B850F7491FDC}" vbd="1" /></d></r>
 ----version----
 language: en
 version: 1
-revision: 49741b99-f168-4c8f-9395-315716d4ebb3
+revision: 7d07c5f7-1d48-4852-9931-f3be2ec88d40
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -49,14 +49,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-49741b99-f168-4c8f-9395-315716d4ebb3
+7d07c5f7-1d48-4852-9931-f3be2ec88d40
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20170408T163640Z
+20170506T162335Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

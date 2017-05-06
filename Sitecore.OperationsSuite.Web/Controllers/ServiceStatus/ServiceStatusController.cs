@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Sitecore.OperationsSuite.Models.ServiceStatus;
@@ -10,6 +11,7 @@ using Sitecore.Data.Managers;
 using Sitecore.Globalization;
 using Sitecore.Mvc.Extensions;
 using Sitecore.Mvc.Presentation;
+using Sitecore.OperationsSuite.Caching;
 using Sitecore.OperationsSuite.Monitoring;
 using Sitecore.OperationsSuite.Monitoring.Retrievers;
 using Sitecore.Reflection;
@@ -66,6 +68,24 @@ namespace Sitecore.OperationsSuite.Controllers.ServiceStatus
       };
     }
 
+    protected Status GetStatusFromCache(Item item)
+    {
+      Status statusCached = StatusCacheManager.GetStatusCache().Get(item.ID.ToString());
+      if (statusCached == null)
+      {
+        // update cache
+        new Task(() => ServiceStatusManager.UpdateStatusCacheFromImplementation(item)).Start();
+
+        return new Status()
+        {
+          Message = "Retrieving status info, please reload the page",
+          Severity = StatusSeverity.Running
+        };
+      }
+
+      return statusCached;
+    }
+
     protected ServiceStatusModel ItemDefinitionToViewModel(Item item)
     {
       if (item.TemplateID == MetricGroupTemplateId)
@@ -96,28 +116,18 @@ namespace Sitecore.OperationsSuite.Controllers.ServiceStatus
         }
         else if (!string.IsNullOrEmpty(item["Implementation"]))
         {
-          IStatusRetriever statusRetriever = ReflectionUtil.CreateObject(Type.GetType(item["Implementation"])) as IStatusRetriever;
-          if (statusRetriever != null)
+          Status result = this.GetStatusFromCache(item);
+
+          ID statusItemId = this.GetStatusItemIdByStatusSeverity(result.Severity);
+          var statusDefaults = this.GetDefaultStatusValues(statusItemId);
+
+          return new ServiceStatusModel()
           {
-            // Get Parameters
-            // NO IMPLEMENTATION NOW
-
-            // Execute
-            var result = statusRetriever.GetStatus();
-
-            // Parse, transform
-
-            ID statusItemId = this.GetStatusItemIdByStatusSeverity(result.Severity);
-            var statusDefaults = this.GetDefaultStatusValues(statusItemId);
-
-            return new ServiceStatusModel()
-            {
-              Color = statusDefaults.Color,
-              Message = result.Message ?? statusDefaults.Message,
-              Name = item["Name"],
-              Status = statusDefaults.Status
-            };
-          }
+            Color = statusDefaults.Color,
+            Message = result.Message ?? statusDefaults.Message,
+            Name = item["Name"],
+            Status = statusDefaults.Status
+          };
         }
       }
 
